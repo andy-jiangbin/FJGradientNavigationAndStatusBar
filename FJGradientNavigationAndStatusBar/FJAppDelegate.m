@@ -6,17 +6,30 @@
 //  Copyright © 2016年 fjf. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "FJAppDelegate.h"
+#import "FJFirstViewController.h"
 
-@interface AppDelegate ()
+@interface FJAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation FJAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.window.rootViewController = [[ViewController alloc] init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyWindow];
+    
+    UINavigationController *navigationFirstController = [[UINavigationController alloc] initWithRootViewController:[[FJFirstViewController alloc] init]];
+    
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[];
+    
     return YES;
 }
 

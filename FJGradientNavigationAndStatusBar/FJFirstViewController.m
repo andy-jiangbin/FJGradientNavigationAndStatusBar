@@ -6,17 +6,18 @@
 //  Copyright © 2016年 fjf. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FJFirstViewController.h"
 
-@interface ViewController ()
+@interface FJFirstViewController ()
 
 @end
 
-@implementation ViewController
+@implementation FJFirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

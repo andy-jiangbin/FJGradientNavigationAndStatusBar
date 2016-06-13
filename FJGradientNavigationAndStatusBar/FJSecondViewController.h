@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  FJSecondViewController.h
 //  FJGradientNavigationAndStatusBar
 //
-//  Created by fjf on 16/6/12.
+//  Created by fjf on 16/6/13.
 //  Copyright © 2016年 fjf. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FJSecondViewController : UIViewController
 
 @end
-
