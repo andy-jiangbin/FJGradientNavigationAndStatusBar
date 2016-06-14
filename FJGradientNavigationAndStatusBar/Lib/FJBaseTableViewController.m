@@ -33,6 +33,11 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self setUpNavigationBar];
+}
+
+
+- (void)setUpNavigationBar{
     //适配ios7
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -43,10 +48,8 @@
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
         [navBar setBackgroundImage:[UIImage imageNamed:@"navi_bar_black.png"] forBarMetrics:UIBarMetricsDefault];
     }
+
 }
-
-
-
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -86,7 +89,7 @@
 }
 
 #pragma mark --- offset way
-//显示navigationBar 和 tabbar
+// 显示navigationBar 和 tabbar
 - (void)showNavigationBarAndStatusBar{
     [self setNavigationBarTransformProgress:0 navigationBarStatusType:NavigationBarStatusOfTypeShow];
     [self setStatusBarTransformProgress:0 statusBarStatusType:StatusBarStatusTypeOfShow];
@@ -118,7 +121,7 @@
 }
 
 
-//通过偏移量移动NavigationBar和StatusBar
+// 通过偏移量移动NavigationBar和StatusBar
 - (void)moveNavigationBarAndStatusBarByOffsetY:(CGFloat)offsetY {
     CGFloat transformTy = self.navigationController.navigationBar.transform.ty;
     CGFloat tabbarTransformTy = self.tabBarController.tabBar.transform.ty;
@@ -149,6 +152,8 @@
         }
     }
 }
+
+// 根据传入的类型和渐变程度,改变StatusBar的颜色和位置
 - (void)setStatusBarTransformProgress:(CGFloat)progress statusBarStatusType:(StatusBarStatusType)statusBarStatusType{
     CGFloat transfromTy = self.tabBarController.tabBar.transform.ty;
     if (statusBarStatusType == StatusBarStatusTypeOfHidden) {
@@ -168,7 +173,7 @@
     }
 }
 
-
+// 根据传入的类型和渐变程度,改变NavigationBar的颜色和位置
 - (void)setNavigationBarTransformProgress:(CGFloat)progress navigationBarStatusType:(NavigationBarStatusType)navigationBarStatusType{
     CGFloat transfromTy = self.navigationController.navigationBar.transform.ty;
     if (navigationBarStatusType == NavigationBarStatusOfTypeHidden) {
