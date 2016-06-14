@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, NavigationBarStatusType) {
+    NavigationBarStatusOfTypeNormal = 0,
+    NavigationBarStatusOfTypeHidden,
+    NavigationBarStatusOfTypeShow,
+};
+
 @interface UINavigationBar (Gradient)
+
+- (void)fj_setImageViewAlpha:(CGFloat)alpha;
+
+- (void)fj_setTranslationY:(CGFloat)translationY;
+
+- (void)fj_moveByTranslationY:(CGFloat)translationY;
 
 @end

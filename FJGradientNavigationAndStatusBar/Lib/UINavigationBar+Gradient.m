@@ -8,6 +8,27 @@
 
 #import "UINavigationBar+Gradient.h"
 
+
 @implementation UINavigationBar (Gradient)
+
+- (void)fj_setImageViewAlpha:(CGFloat)alpha
+{
+    for (UIView *tmpView in self.subviews) {
+        if ([tmpView isKindOfClass:[UIImageView class]]) {
+            tmpView.alpha = alpha;
+        }
+    }
+}
+
+- (void)fj_setTranslationY:(CGFloat)translationY
+{
+    self.transform = CGAffineTransformMakeTranslation(0, self.transform.ty + translationY);
+}
+
+
+- (void)fj_moveByTranslationY:(CGFloat)translationY
+{
+    self.transform = CGAffineTransformMakeTranslation(0, translationY);
+}
 
 @end

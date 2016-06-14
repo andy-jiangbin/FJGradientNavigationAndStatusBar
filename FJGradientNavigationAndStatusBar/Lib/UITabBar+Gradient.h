@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITabBar (Gradient)
+typedef NS_ENUM(NSInteger, StatusBarStatusType) {
+    StatusBarStatusTypeOfNormal = 0,
+    StatusBarStatusTypeOfHidden,
+    StatusBarStatusTypeOfShow,
+};
 
+@interface UITabBar (Gradient)
+- (void)fj_setImageViewAlpha:(CGFloat)alpha;
+
+- (void)fj_setTranslationY:(CGFloat)translationY;
+
+- (void)fj_moveByTranslationY:(CGFloat)translationY;
 @end

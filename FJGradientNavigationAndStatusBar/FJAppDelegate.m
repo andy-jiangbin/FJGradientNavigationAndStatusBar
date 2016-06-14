@@ -19,16 +19,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+   
     
-    self.window.rootViewController = [[ViewController alloc] init];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyWindow];
-    
-    UINavigationController *navigationFirstController = [[UINavigationController alloc] initWithRootViewController:[[FJFirstViewController alloc] init]];
+    UINavigationController *firstNav = [[UINavigationController alloc] initWithRootViewController:[[FJFirstViewController alloc] init]];
+    firstNav.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
+
     
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[];
+    tabBarController.viewControllers = @[firstNav];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyWindow];
     
     return YES;
 }

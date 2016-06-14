@@ -1,3 +1,4 @@
+
 //
 //  UITabBar+Gradient.m
 //  FJGradientNavigationAndStatusBar
@@ -9,5 +10,21 @@
 #import "UITabBar+Gradient.h"
 
 @implementation UITabBar (Gradient)
+
+- (void)fj_setTranslationY:(CGFloat)translationY
+{
+    self.transform = CGAffineTransformMakeTranslation(0, self.transform.ty - translationY);
+}
+
+- (void)fj_moveByTranslationY:(CGFloat)translationY
+{
+    self.transform = CGAffineTransformMakeTranslation(0, translationY);
+}
+
+
+- (void)fj_setImageViewAlpha:(CGFloat)alpha
+{
+    self.alpha = alpha;
+}
 
 @end

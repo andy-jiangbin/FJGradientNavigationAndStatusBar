@@ -10,6 +10,15 @@
 #define  kScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define  kScreenHeight [[UIScreen mainScreen] bounds].size.height
 
+//动画默认时间
+#define kDefaultAnimationTime 0.3
+
+//navigationBarHeight的高度
+#define   kNavigationBarHeight 64
+
+//statusBar的高度
+#define   kStatusBarHeight 49
+
 #import <UIKit/UIKit.h>
 
 @interface FJBaseTableViewController : UIViewController

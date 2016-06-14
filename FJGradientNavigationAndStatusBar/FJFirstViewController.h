@@ -6,9 +6,9 @@
 //  Copyright © 2016年 fjf. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FJBaseTableViewController.h"
 
-@interface FJFirstViewController : UIViewController
+@interface FJFirstViewController : FJBaseTableViewController
 
 
 @end
