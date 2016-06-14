@@ -31,7 +31,7 @@
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setUpNavigationBar];
 }
@@ -74,8 +74,7 @@
 
 #pragma mark --- UIScrollViewDelegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"------%@", NSStringFromCGPoint(scrollView.contentOffset));
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat bottomOffset = scrollView.contentSize.height - scrollView.contentOffset.y - scrollView.frame.size.height;
     if (scrollView.contentOffset.y > - (2*kNavigationBarHeight) && bottomOffset > 0) {
         CGFloat offsetY = scrollView.contentOffset.y - _originalOffsetY;
