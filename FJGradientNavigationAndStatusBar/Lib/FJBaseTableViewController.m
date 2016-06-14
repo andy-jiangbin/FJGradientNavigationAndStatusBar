@@ -55,9 +55,11 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *identifier = @"PlainTableViewControllerIdentifier";
@@ -67,6 +69,7 @@
     }
     return cell;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -125,6 +128,7 @@
 - (void)moveNavigationBarAndStatusBarByOffsetY:(CGFloat)offsetY {
     CGFloat transformTy = self.navigationController.navigationBar.transform.ty;
     CGFloat tabbarTransformTy = self.tabBarController.tabBar.transform.ty;
+    
     if (offsetY > 0) {
         if (fabs(transformTy) >= kNavigationBarHeight) {
             [self setNavigationBarTransformProgress:1 navigationBarStatusType:NavigationBarStatusOfTypeHidden];

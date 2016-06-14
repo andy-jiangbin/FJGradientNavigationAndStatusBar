@@ -22,7 +22,13 @@
 
 - (void)fj_setTranslationY:(CGFloat)translationY
 {
-    self.transform = CGAffineTransformMakeTranslation(0, self.transform.ty + translationY);
+    CGFloat transfromTy = self.transform.ty + translationY;
+    if (transfromTy > 0) {
+        transfromTy = 0;
+    }else if(transfromTy < -(self.frame.size.height + 20)){
+        transfromTy = -(self.frame.size.height + 20);
+    }
+    self.transform = CGAffineTransformMakeTranslation(0, transfromTy);
 }
 
 

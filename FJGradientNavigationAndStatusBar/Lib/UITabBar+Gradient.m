@@ -13,7 +13,13 @@
 
 - (void)fj_setTranslationY:(CGFloat)translationY
 {
-    self.transform = CGAffineTransformMakeTranslation(0, self.transform.ty - translationY);
+    CGFloat transfromTy = self.transform.ty - translationY;
+    if (transfromTy > self.frame.size.height) {
+        transfromTy = self.frame.size.height;
+    }else if(transfromTy < 0){
+        transfromTy = 0;
+    }
+    self.transform = CGAffineTransformMakeTranslation(0, transfromTy);
 }
 
 - (void)fj_moveByTranslationY:(CGFloat)translationY
