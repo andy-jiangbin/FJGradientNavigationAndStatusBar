@@ -82,8 +82,8 @@
     if (scrollView.contentOffset.y > - (2*kNavigationBarHeight) && bottomOffset > 0) {
         CGFloat offsetY = scrollView.contentOffset.y - _originalOffsetY;
         [self moveNavigationBarAndStatusBarByOffsetY:offsetY];
-        _originalOffsetY = scrollView.contentOffset.y;
     }
+    _originalOffsetY = scrollView.contentOffset.y;
 }
 
 
