@@ -75,8 +75,9 @@
 #pragma mark --- UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@"------%@", NSStringFromCGPoint(scrollView.contentOffset));
     CGFloat bottomOffset = scrollView.contentSize.height - scrollView.contentOffset.y - scrollView.frame.size.height;
-    if (scrollView.contentOffset.y > - kNavigationBarHeight && bottomOffset > 0) {
+    if (scrollView.contentOffset.y > - (2*kNavigationBarHeight) && bottomOffset > 0) {
         CGFloat offsetY = scrollView.contentOffset.y - _originalOffsetY;
         [self moveNavigationBarAndStatusBarByOffsetY:offsetY];
         _originalOffsetY = scrollView.contentOffset.y;
@@ -151,6 +152,7 @@
             [self setStatusBarTransformProgress:0 statusBarStatusType:StatusBarStatusTypeOfShow];
         }
     }
+ 
 }
 
 // 根据传入的类型和渐变程度,改变StatusBar的颜色和位置

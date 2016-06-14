@@ -17,7 +17,9 @@
 #define   kNavigationBarHeight 64
 
 //statusBar的高度
-#define   kStatusBarHeight 49
+#define   kStatusBarHeight self.tabBarController.tabBar.frame.size.height
+
+
 
 #import <UIKit/UIKit.h>
 
