@@ -7,6 +7,7 @@
 //
 
 #import "FJFirstViewController.h"
+#import "FJSecondViewController.h"
 
 @interface FJFirstViewController ()
 
@@ -17,8 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIButton *tmpBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 50, 100, 100)];
+    [tmpBtn addTarget:self action:@selector(enterSecondViewController) forControlEvents:UIControlEventTouchUpInside];
+    tmpBtn.backgroundColor = [UIColor redColor];
+    [self.view addSubview:tmpBtn];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self setUpTableView];
     [self setUpNavigationBar];
+}
+
+- (void)enterSecondViewController{
+    FJSecondViewController *secondViewController = [[FJSecondViewController alloc] init];
+    secondViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:secondViewController animated:YES];
 }
 
 
@@ -54,5 +67,8 @@
     return 65;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSLog(@"第%ld行", indexPath.row);
+}
 @end

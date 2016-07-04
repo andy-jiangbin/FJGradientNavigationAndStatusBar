@@ -129,29 +129,38 @@
     CGFloat transformTy = self.navigationController.navigationBar.transform.ty;
     CGFloat tabbarTransformTy = self.tabBarController.tabBar.transform.ty;
     
+    // offset 向上滚动
     if (offsetY > 0) {
         if (fabs(transformTy) >= kNavigationBarHeight) {
+            //当NavigationBar的transfrom.ty大于NavigationBar高度，导航栏离开可视范围，设置NavigationBar隐藏
             [self setNavigationBarTransformProgress:1 navigationBarStatusType:NavigationBarStatusOfTypeHidden];
         } else {
+            //当NavigationBar的transfrom.ty小于NavigationBar高度，导航栏在可视范围内，设置NavigationBar偏移位置和背景透明度
             [self setNavigationBarTransformProgress:offsetY navigationBarStatusType:NavigationBarStatusOfTypeNormal];
         }
         
         if (fabs(tabbarTransformTy) >= kStatusBarHeight) {
+            //当StatusTabBar的transfrom.ty大于StatusTabBar高度，导航栏离开可视范围，设置StatusTabBar隐藏
             [self setStatusBarTransformProgress:1 statusBarStatusType:StatusBarStatusTypeOfHidden];
         } else {
+            //当当StatusTabBar的transfrom.ty小于StatusTabBar高度，导航栏在可视范围内，设置StatusTabBar偏移位置和背景透明度
             [self setStatusBarTransformProgress:offsetY statusBarStatusType:StatusBarStatusTypeOfNormal];
         }
-        
+    // offset 向下滚动
     } else if(offsetY < 0){
         if (transformTy < 0 && fabs(transformTy) <= kNavigationBarHeight) {
+            //当NavigationBar的transfrom.ty小于NavigationBar高度，导航栏进入可视范围内，设置NavigationBar偏移位置和背景透明度
             [self setNavigationBarTransformProgress:offsetY navigationBarStatusType:NavigationBarStatusOfTypeNormal];
         } else {
+            //当NavigationBar的transfrom.ty超过NavigationBar原来位置，设置NavigationBar显示
             [self setNavigationBarTransformProgress:0 navigationBarStatusType:NavigationBarStatusOfTypeShow];
         }
         
         if (tabbarTransformTy <= kStatusBarHeight && tabbarTransformTy > 0) {
+            //当StatusTabBar的transfrom.ty小于StatusTabBar高度，导航栏进入可视范围内，设置StatusTabBar偏移位置和背景透明度
             [self setStatusBarTransformProgress:offsetY statusBarStatusType:StatusBarStatusTypeOfNormal];
         } else {
+            //当StatusTabBar的transfrom.ty超过StatusTabBar原来位置，设置StatusTabBar显示
             [self setStatusBarTransformProgress:0 statusBarStatusType:StatusBarStatusTypeOfShow];
         }
     }

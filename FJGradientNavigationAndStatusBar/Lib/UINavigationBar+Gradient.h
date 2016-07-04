@@ -16,10 +16,11 @@ typedef NS_ENUM(NSInteger, NavigationBarStatusType) {
 
 @interface UINavigationBar (Gradient)
 
+// 设置背景图透明度
 - (void)fj_setImageViewAlpha:(CGFloat)alpha;
-
+// 根据translationY在原来位置上偏移
 - (void)fj_setTranslationY:(CGFloat)translationY;
-
+// 设置偏移translationY
 - (void)fj_moveByTranslationY:(CGFloat)translationY;
 
 @end
