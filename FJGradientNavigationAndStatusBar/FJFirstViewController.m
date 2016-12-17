@@ -7,7 +7,6 @@
 //
 
 #import "FJFirstViewController.h"
-#import "FJSecondViewController.h"
 
 @interface FJFirstViewController ()
 
@@ -15,38 +14,34 @@
 
 @implementation FJFirstViewController
 
+#pragma mark --- life circle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *tmpBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 50, 100, 100)];
-    [tmpBtn addTarget:self action:@selector(enterSecondViewController) forControlEvents:UIControlEventTouchUpInside];
-    tmpBtn.backgroundColor = [UIColor redColor];
-    [self.view addSubview:tmpBtn];
-    self.view.backgroundColor = [UIColor whiteColor];
-    
     [self setUpTableView];
+    
     [self setUpNavigationBar];
 }
 
-- (void)enterSecondViewController{
-    FJSecondViewController *secondViewController = [[FJSecondViewController alloc] init];
-    secondViewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:secondViewController animated:YES];
-}
 
-
+#pragma mark --- private method
+// 设置 tableView 属性
 - (void)setUpTableView {
     self.tableView.frame = CGRectMake(0, -kNavigationBarHeight, kScreenWidth, kScreenHeight + kNavigationBarHeight);
     self.tableView.contentInset = UIEdgeInsetsMake(kNavigationBarHeight, 0, 0, 0);
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
-- (void)setUpNavigationBar{
+// 设置 导航栏
+- (void)setUpNavigationBar {
     self.navigationItem.title = @"导航栏(背景图)";
+    
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
 }
 
-#pragma mark UITableViewDatasource
+#pragma mark --- custom delegate
+
+/***************************************** UITableViewDelegate 和 UITableViewDataSource *****************************************/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 50;

@@ -24,5 +24,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FJBaseTableViewController : UIViewController
-@property (nonatomic, strong)UITableView *tableView;
+// tableView
+@property (nonatomic, strong) UITableView *tableView;
 @end

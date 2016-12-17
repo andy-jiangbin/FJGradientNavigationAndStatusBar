@@ -20,7 +20,6 @@
 		3049148B1D0D7B6600DF0572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304914891D0D7B6600DF0572 /* LaunchScreen.storyboard */; };
 		304914961D0D7B6600DF0572 /* FJGradientNavigationAndStatusBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 304914951D0D7B6600DF0572 /* FJGradientNavigationAndStatusBarTests.m */; };
 		304914A11D0D7B6600DF0572 /* FJGradientNavigationAndStatusBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 304914A01D0D7B6600DF0572 /* FJGradientNavigationAndStatusBarUITests.m */; };
-		305CF3A41D2151F3006C79F6 /* FJSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305CF3A31D2151F3006C79F6 /* FJSecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +64,6 @@
 		3049149C1D0D7B6600DF0572 /* FJGradientNavigationAndStatusBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FJGradientNavigationAndStatusBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		304914A01D0D7B6600DF0572 /* FJGradientNavigationAndStatusBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJGradientNavigationAndStatusBarUITests.m; sourceTree = "<group>"; };
 		304914A21D0D7B6600DF0572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		305CF3A21D2151F3006C79F6 /* FJSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSecondViewController.h; sourceTree = "<group>"; };
-		305CF3A31D2151F3006C79F6 /* FJSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +142,6 @@
 				3049147F1D0D7B6600DF0572 /* FJAppDelegate.m */,
 				304914811D0D7B6600DF0572 /* FJFirstViewController.h */,
 				304914821D0D7B6600DF0572 /* FJFirstViewController.m */,
-				305CF3A21D2151F3006C79F6 /* FJSecondViewController.h */,
-				305CF3A31D2151F3006C79F6 /* FJSecondViewController.m */,
 				304914841D0D7B6600DF0572 /* Main.storyboard */,
 				304914871D0D7B6600DF0572 /* Assets.xcassets */,
 				304914891D0D7B6600DF0572 /* LaunchScreen.storyboard */,
@@ -316,7 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				304914831D0D7B6600DF0572 /* FJFirstViewController.m in Sources */,
-				305CF3A41D2151F3006C79F6 /* FJSecondViewController.m in Sources */,
 				302133FD1D0EE46900E7A484 /* UINavigationBar+Gradient.m in Sources */,
 				302133FA1D0EE2AD00E7A484 /* UITabBar+Gradient.m in Sources */,
 				304914801D0D7B6600DF0572 /* FJAppDelegate.m in Sources */,
