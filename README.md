@@ -10,4 +10,8 @@
 
 
 # 2.具体分析详见:
-[FJGradientNavigationAndStatusBar 简书链接](http://www.jianshu.com/p/435b49da4c95)，大家有兴趣可以看一下，如果觉得不错，麻烦给个喜欢或星，谢谢！
+[FJGradientNavigationAndStatusBar 简书链接](http://www.jianshu.com/p/435b49da4c95)
+
+
+#3.最后:
+若有不足，麻烦您指出，谢谢！
