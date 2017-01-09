@@ -11,8 +11,7 @@
 
 @implementation UITabBar (Gradient)
 
-- (void)fj_setTranslationY:(CGFloat)translationY
-{
+- (void)fj_setTranslationY:(CGFloat)translationY {
     CGFloat transfromTy = self.transform.ty - translationY;
     if (transfromTy > self.frame.size.height) {
         transfromTy = self.frame.size.height;
@@ -22,14 +21,12 @@
     self.transform = CGAffineTransformMakeTranslation(0, transfromTy);
 }
 
-- (void)fj_moveByTranslationY:(CGFloat)translationY
-{
+- (void)fj_moveByTranslationY:(CGFloat)translationY {
     self.transform = CGAffineTransformMakeTranslation(0, translationY);
 }
 
 
-- (void)fj_setImageViewAlpha:(CGFloat)alpha
-{
+- (void)fj_setImageViewAlpha:(CGFloat)alpha {
     self.alpha = alpha;
 }
 

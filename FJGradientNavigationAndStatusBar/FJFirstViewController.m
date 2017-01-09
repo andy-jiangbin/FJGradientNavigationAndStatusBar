@@ -25,6 +25,7 @@
 
 
 #pragma mark --- private method
+
 // 设置 tableView 属性
 - (void)setUpTableView {
     self.tableView.frame = CGRectMake(0, -kNavigationBarHeight, kScreenWidth, kScreenHeight + kNavigationBarHeight);
@@ -34,9 +35,8 @@
 
 // 设置 导航栏
 - (void)setUpNavigationBar {
+    [super setUpNavigationBar];
     self.navigationItem.title = @"导航栏(背景图)";
-    
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
 }
 
 #pragma mark --- custom delegate

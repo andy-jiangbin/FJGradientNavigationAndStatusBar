@@ -26,4 +26,6 @@
 @interface FJBaseTableViewController : UIViewController
 // tableView
 @property (nonatomic, strong) UITableView *tableView;
+// 设置 导航栏
+- (void)setUpNavigationBar;
 @end

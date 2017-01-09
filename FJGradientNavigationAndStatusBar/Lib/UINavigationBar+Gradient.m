@@ -11,17 +11,20 @@
 
 @implementation UINavigationBar (Gradient)
 
-- (void)fj_setImageViewAlpha:(CGFloat)alpha
-{
+- (void)fj_setImageViewAlpha:(CGFloat)alpha {
     for (UIView *tmpView in self.subviews) {
-        if ([tmpView isKindOfClass:[UIImageView class]]) {
+        // ios 10以下
+        if ([NSStringFromClass([tmpView class]) isEqualToString:@"_UINavigationBarBackground"]) {
+            tmpView.alpha = alpha;
+        }
+        // ios 10即以上
+        if ([NSStringFromClass([tmpView class]) isEqualToString:@"_UIBarBackground"]) {
             tmpView.alpha = alpha;
         }
     }
 }
 
-- (void)fj_setTranslationY:(CGFloat)translationY
-{
+- (void)fj_setTranslationY:(CGFloat)translationY {
     CGFloat transfromTy = self.transform.ty + translationY;
     if (transfromTy > 0) {
         transfromTy = 0;
@@ -32,9 +35,9 @@
 }
 
 
-- (void)fj_moveByTranslationY:(CGFloat)translationY
-{
+- (void)fj_moveByTranslationY:(CGFloat)translationY {
     self.transform = CGAffineTransformMakeTranslation(0, translationY);
 }
+
 
 @end

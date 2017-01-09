@@ -23,16 +23,19 @@
     [super viewDidLoad];
     // 添加 tableView
     [self.view addSubview:self.tableView];
+    
+    
+    [self setUpNavigationBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setUpNavigationBar];
+    
 }
 
 
 #pragma mark --- private method
-- (void)setUpNavigationBar{
+- (void)setUpNavigationBar {
     //适配ios7
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -43,7 +46,6 @@
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
         [navBar setBackgroundImage:[UIImage imageNamed:@"navi_bar_black.png"] forBarMetrics:UIBarMetricsDefault];
     }
-
 }
 
 // 显示navigationBar 和 tabbar
@@ -191,7 +193,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat bottomOffset = scrollView.contentSize.height - scrollView.contentOffset.y - scrollView.frame.size.height;
-    if (scrollView.contentOffset.y > - (2*kNavigationBarHeight) && bottomOffset > 0) {
+    if (scrollView.contentOffset.y > - kNavigationBarHeight && bottomOffset > 0) {
         CGFloat offsetY = scrollView.contentOffset.y - _originalOffsetY;
         [self moveNavigationBarAndStatusBarByOffsetY:offsetY];
     }
