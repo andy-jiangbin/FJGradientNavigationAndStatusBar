@@ -4,7 +4,7 @@
 由于项目需求要做一个这样的功能，所以做好之后，抽取出来，封装了下，希望能帮到有需要的朋友。
 
 # 1.效果图
-![UINavigationBar和UITabbar渐变.gif](http://upload-images.jianshu.io/upload_images/2252551-3b2c85bff3411328.gif?imageMogr2/auto-orient/strip)
+![UINavigationBar和UITabbar渐变.gif](https://github.com/fangjinfeng/FJGradientNavigationAndStatusBar/blob/master/Gif/UINavigationBar%E5%92%8CUITabbar%E6%B8%90%E5%8F%98.gif)
 
 
 
