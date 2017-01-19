@@ -6,22 +6,22 @@
 //  Copyright © 2016年 ltebean. All rights reserved.
 //
 
-//获取当前屏幕的宽高
+// 屏幕 宽度
 #define  kScreenWidth [[UIScreen mainScreen] bounds].size.width
+
+// 屏幕 高度
 #define  kScreenHeight [[UIScreen mainScreen] bounds].size.height
-
-//动画默认时间
-#define kDefaultAnimationTime 0.3
-
-//navigationBarHeight的高度
-#define   kNavigationBarHeight 64
-
-//statusBar的高度
-#define   kStatusBarHeight self.tabBarController.tabBar.frame.size.height
-
 
 
 #import <UIKit/UIKit.h>
+
+// 标签栏 高度
+extern const CGFloat kStatusBarHeight;
+// 导航栏 高度
+extern const CGFloat kNavigationBarHeight;
+// 动画   默认 时间
+extern const CGFloat kDefaultAnimationTime;
+
 
 @interface FJBaseTableViewController : UIViewController
 // tableView

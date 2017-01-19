@@ -16,25 +16,33 @@
 }
 @end
 
+
+
 @implementation FJBaseTableViewController
 
+// 标签栏 高度
+const CGFloat kStatusBarHeight = 49.0f;
+// 导航栏 高度
+const CGFloat kNavigationBarHeight = 64.0f;
+// 动画   默认 时间
+const CGFloat kDefaultAnimationTime = 0.3f;
+
 #pragma mark --- life circle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 设置 导航栏
+    [self setUpNavigationBar];
+    
     // 添加 tableView
     [self.view addSubview:self.tableView];
-    
-    
-    [self setUpNavigationBar];
-}
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
 }
-
 
 #pragma mark --- private method
+
+// 设置 导航栏
 - (void)setUpNavigationBar {
     //适配ios7
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
@@ -206,6 +214,7 @@
 }
 
 #pragma mark --- getter method
+
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
